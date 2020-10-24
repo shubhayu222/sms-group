@@ -1,31 +1,36 @@
-# demoMEAN
-Demo MEAN Stack small app
+# SMS GROUP TEST
+
+MEAN fullstack example project 
+
+## Getting Started
+
+Need Node JS version >= 8 with NPM 
 
 
-Steps to follow:
+### Installing
 
-$npm install
+SERVER setup
+```javascript
+npm install
+npm start
 
-$cd client
+```
+CLIENT setup
 
-$npm install
-
-$ng serve
-
-to start the server in new cmd
-> from root location
-
-$npm start
+```javascript
+cd client
+npm install
+npm start
+```
 
 API will be running on port 3000 by default
 and client will be at port 4200
 
-api path for e.g :  http://localhost:3000/alllocation
+api path for e.g : > http://localhost:3000/alllocation
 
-frontend client ui : http://localhost:4200/ 
+frontend client ui : > http://localhost:4200/ 
 
-Mongo DB should be runing in localhost in default port
 
-Database name : demoapp
+## Authors
 
-collection name : locations
+* **Shubhayu Ghosh** - *Initial work* - 
