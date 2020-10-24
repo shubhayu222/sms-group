@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>City Location Table</h2>
+  <p>Details table</p> 
+  <form>
+  <div class="row">
+    <div class="col-sm-3">  <input type="date" class="form-control" placeholder="Start Date" id="datemax" [(ngModel)]="startdate" name="startdate" ></div>
+    <div class="col-sm-3">  <input type="date" class="form-control" placeholder="End Date" id="datemax" [(ngModel)]="enddate" name="enddate" ></div>
+    <div  class="col-sm-2"  >  <button  class="btn" (click) = "filtertable()">Go</button> | <button  class="btn" (click) = "reset()">Reset</button>   </div>
+  </div>
+</form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="cursor-pointer" >ID <span class="glyphicon"
+          [ngClass]="ID_ASC ? ' glyphicon-chevron-down' : 'glyphicon-chevron-up' " (click)="sortByField('id')"></span></th>
+        <th class="cursor-pointer" >City <span class="glyphicon"
+          [ngClass]="CITY_ASC ? ' glyphicon-chevron-down' : 'glyphicon-chevron-up' " (click)="sortByField('city')"></span></th>
+        <th class="cursor-pointer"  >Start Date <span class="glyphicon"
+          [ngClass]="START_DATE_ASC ? ' glyphicon-chevron-down' : 'glyphicon-chevron-up' " (click)="sortByField('startdate')"></span>
+          
+        </th>
+        <th class="cursor-pointer">End Date <span class="glyphicon"
+          [ngClass]="END_DATE_ASC ? ' glyphicon-chevron-down' : 'glyphicon-chevron-up'"  (click)="sortByField('enddate')"></span>
+          
+</th>
+          <th class="slideTitle cursor-pointer" >Price <span class="glyphicon"
+            [ngClass]="PRICE_ASC ? ' glyphicon-chevron-down' : 'glyphicon-chevron-up' " (click)="sortByField('price')"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr *ngIf="items.length == 0"><td colspan="5">No records found</td></tr>
+  <tr  *ngFor="let item of items;let ind=index">
+    <td>{{item.id}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.start_date | date:"MM/dd/yyyy"}}</td>
+    <td>{{item.end_date | date:"M/dd/yyyy"}}</td>
+    <td>{{item.price | currency}}</td>
+  </tr>
+
+
+
+     
+      
+    </tbody>
+  </table>
+</div>
+
