@@ -6,10 +6,15 @@ var mongoose = require('mongoose');
 var locationRouter = require('./routes/location');
 
 var app = express();
-mongoose
-  .connect('mongodb://smsgroup:password123@ds143614.mlab.com:43614/smsgroup')
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+
+
+mongoose.connect('mongodb://smsgroup:password123@ds143614.mlab.com:43614/smsgroup');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+console.log("MongoDB Connected");
+});
+
  
 app.use(logger('dev'));
 app.use(express.json());
